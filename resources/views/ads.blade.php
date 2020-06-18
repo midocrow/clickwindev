@@ -6,22 +6,22 @@
     <h3 style="color:white" class="title is-warning">Advertising</h3>
     <br>
    
-    <div class="box has-background-dark"  style="margin-right:50px;text-align: left;">
+    <div class="box has-background-dark" >
         <p style="color: white;text-shadow:0px 0px 0px white;" align="justify">     
-            You have an online business (Youtube channel, Instagram page, Facebook page,Application, Website,…) this area will make it so big with too much visitors.<br><br>
-            In the First option, you have to fill an information form by clicking on « <span style="color:#ffd419;">Make Advertising</span> » button to send it to our team for verification and you have to make 
+            You have an online business (Youtube channel, Instagram page, Facebook page, Application, Website,…) this area will make it so big with too much visitors.<br><br>
+            In the First option, you have to fill an information form by clicking on « <span style="color:#ffd419;">Make Advertising for us</span> » button to send it to our team for verification and you have to make 
             after Feedback an advertising for our Website in your Social Media with some benefits in return. <br><br>
             In the Second one, it’s the same thing but the difference is that we make for your online business after positif Feedback (link is allowed for access and without 
-            inappropriate content) an advertising in our Website by filling the requested informations in the form that will be viewed when you click on « <span style="color:#ffd419;">Request Advertising</span> » 
+            inappropriate content) an advertising in our Website by filling the requested informations in the form that will be viewed when you click on « <span style="color:#ffd419;">Request Advertising from us</span> » 
             button + offer subscription    and we will do the hard part.
         </p>
         <br>
         <div class="columns is-centered">
             <div class="column">
-                <button class="button is-large is-fullwidth is-warning">Make Advertising</button>
+                <a onClick="document.getElementById('modal').classList.toggle('is-active')" class="button is-large is-fullwidth is-warning">Make advertising for us</a>
             </div>
             <div class="column">
-              <a class="button is-large is-fullwidth is-warning" href="/adver">Request Advertising</a>
+              <a class="button is-large is-fullwidth is-warning" href="/adver">Request advertising from us</a>
             </div>
         </div>
 
@@ -57,12 +57,12 @@
         </div>
     </article>
   
-    <div class="modal">
+    <div id="modal" class="modal">
         <div class="modal-background"></div>
         <div class="modal-card" >
           <header class="modal-card-head" style="background-color: black">
             <p class="modal-card-title" style="color:#ffd419;text-shadow:0px 0px 0px white;">Make advertising</p>
-            <button class="delete" aria-label="close"></button>
+            <button onClick="document.getElementById('modal').classList.toggle('is-active')" class="delete" aria-label="close"></button>
           </header>
           <section class="modal-card-body" style="background-color: black">
             <!-- Content ... -->
@@ -170,7 +170,7 @@
           </section>
           <footer class="modal-card-foot" style="background-color: black">
             <button class="button is-warning">Send</button>
-            <button class="button is-grey">Cancel</button>
+            <button onClick="document.getElementById('modal').classList.toggle('is-active')" class="button is-grey">Cancel</button>
           </footer>
         </div>
     </div>

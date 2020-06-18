@@ -4,16 +4,16 @@
 <section class="">
     <div class="">
 
+
         <div class="container has-text-centered">
 
-
-            <div class="box has-background-black" id="wave" style="height: 100%;width:100%;border-radius:50px;">
+            <div class="box has-background-black" id="wave" style="border-radius:50px;">
 
                 <div class="columns">
 
                     <div class="column is-half is-hidden-mobile">
-                        <figure class=" image is-square">
-                            <img src="/storage/undraw_press_plap.svg" :style="{ 'margin-left': '0%' }" />
+                        <figure class="image is-148x148">
+                            <img src="/storage/undraw_press_plap.svg" style="padding:50px;" />
                         </figure>
                     </div>
 
@@ -30,13 +30,13 @@
 
                                     <div class="field">
                                         <div class="control has-icons-left has-icons-right is-medium">
-                                            <input id="text-field-sign-design" name="email" type="email" autocomplete="on" placeholder="Username" autofocus="autofocus" required="required" class="input @error( 'email') is-danger @enderror is-medium" value="{{ old( 'email') }}">
+                                            <input id="text-field-sign-design" name="name" type="text"  minlength="8" maxlength="20" autocomplete="on" placeholder="Username" autofocus="autofocus" required="required" class="input @error( 'email') is-danger @enderror is-medium" value="{{ old( 'email') }}">
                                             <span class="icon is-left is-medium"><i class="fas fa-user" style="color:#FFD419;"></i></span>
                                             <span class="icon is-right has-text-danger is-medium">
                                     <i class="mdi mdi-alert-circle mdi-36px"></i>
                                 </span>
                                         </div>
-                                        @error('email')
+                                        @error('name')
                                         <p class="help is-danger">{{ $message }}</p>
                                         @enderror
                                     </div>
@@ -54,39 +54,12 @@
                                         @enderror
                                     </div>
 
-                                    <div class="field">
-                                        <div class="control has-icons-left has-icons-right is-medium">
-                                            <input id="text-field-sign-design" name="password" type="password" autocomplete="on" placeholder="Password" autofocus="autofocus" required="required" class="input @error( 'email') is-danger
-                                @enderror is-medium">
-                                            <span class="icon is-left is-medium"><i class="fas fa-key" style="color:#FFD419;"></i></span>
-                                            <span class="icon is-right has-text-danger is-medium">
-                                   <i class="mdi mdi-alert-circle mdi-36px"></i>
-                               </span>
-                                        </div>
-                                        @error('password')
-
-                                        <p class="help is-danger">{{ $message }}</p>
-                                        @enderror
-                                    </div>
-                                    <div class="field">
-                                        <div class="control has-icons-left has-icons-right is-medium">
-                                            <input id="text-field-sign-design" name="password" type="password" autocomplete="on" placeholder="Confirm password" autofocus="autofocus" required="required" class="input @error( 'email') is-danger
-                                @enderror is-medium">
-                                            <span class="icon is-left is-medium"><i class="fas fa-key" style="color:#FFD419;"></i></span>
-                                            <span class="icon is-right has-text-danger is-medium">
-                                   <i class="mdi mdi-alert-circle mdi-36px"></i>
-                               </span>
-                                        </div>
-                                        @error('password')
-
-                                        <p class="help is-danger">{{ $message }}</p>
-                                        @enderror
-                                    </div>
+                        
                                     <br>
                                     <button type="submit" style="color:black;font-family: bitter;" class="button is-rounded is-warning is-block is-medium is-fullwidth"> <p>Sign up<p> </button>
                                 </form>
                             </div><br><br>
-                            <a id="sign-button" href="{{route( 'login') }}">Have an account ? Log in</a> </p>
+                            <a id="sign-button" href="{{route( 'login') }}">Already have an account</a> </p>
                         </div>
 
                     </div>

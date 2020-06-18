@@ -2,7 +2,7 @@
   <nav class="navbar is-fixed-top is-black" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a class="navbar-item" id="logo" href="/home">
-        <img id="img" src="/storage/CW2.png" width="85px" />
+        <img id="img" src="/storage/CW2.png" width="75px" />
       </a>
 
       <a v-if="logged" class="navbar-item is-right is-hidden-desktop" id="points-menu-item">
@@ -120,7 +120,7 @@
             <div v-if="shownotification " class="dropdown-menu" id="dropdown-menu2" role="menu">
               <div class="dropdown-content">
                 <div class="dropdown-item">
-                  <p>New notificatons.</p>
+                  <p>Personal notificatons.</p>
                 </div>
 
                 <hr class="dropdown-divider" />
@@ -129,7 +129,7 @@
                   <p>{{ notif.data.code }}</p>
                 </div>
 
-                <a href="#" class="dropdown-item">New notificatons</a>
+                <a href="#" class="dropdown-item">Community notificatons</a>
               </div>
             </div>
           </div>

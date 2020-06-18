@@ -25,7 +25,7 @@
              <div class="field">
                         <label class="label is-large" style="color:white;text-align:left;">Username</label>
                          <div class="control has-icons-left has-icons-right is-large">
-                             <input style="background-color: grey;color:white;" name="email" type="email" autocomplete="on" placeholder="Your Email" autofocus="autofocus" required="required" class="input  @error('email') is-danger  @enderror is-medium" value=" @auth {{  Auth::user()->name }} @endauth @guest {{ old('email') ?? ''}} @endguest"> 
+                             <input style="background-color: grey;color:white;" name="name" type="text" autocomplete="on" placeholder="Your Email" autofocus="autofocus" required="required" class="input  @error('email') is-danger  @enderror is-medium" value=" @auth {{  Auth::user()->name }} @endauth @guest {{ old('email') ?? ''}} @endguest"> 
                              <span class="icon is-left is-medium has-text-warning"><i class="fas fa-user-cog"></i></span> 
                              <span class="icon is-right has-text-danger is-medium">
                                 <i class="mdi mdi-alert-circle mdi-36px"></i>
@@ -54,7 +54,7 @@
             <div class="field">
                 <label class="label is-large" style="color:white;text-align:left;">Subject</label>
                  <div class="control has-icons-left has-icons-right is-large">
-                     <input style="background-color: grey;color:white;" name="email" type="email" autocomplete="on" placeholder="Enter your subject..." autofocus="autofocus" required="required" class="input  @error('email') is-danger  @enderror is-large"> 
+                     <input style="background-color: grey;color:white;" name="" type="text" autocomplete="on" placeholder="Enter your subject..." autofocus="autofocus" required="required" class="input  @error('email') is-danger  @enderror is-large"> 
                      <span class="icon is-left is-medium has-text-warning"><i class="fas fa-keyboard"></i></span> 
                      <span class="icon is-right has-text-danger is-medium">
                         <i class="mdi mdi-alert-circle mdi-36px"></i>

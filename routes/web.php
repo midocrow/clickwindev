@@ -16,6 +16,10 @@ use TCG\Voyager\Facades\Voyager;
 |
 */
 
+Route::get('/reset', function () {
+    return view('auth.passwords.reset');
+});
+
 Route::get('mail', function () {
     return view('vendor.mail.html.message');
 });

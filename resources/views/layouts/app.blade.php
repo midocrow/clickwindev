@@ -52,6 +52,7 @@
  background-image: url("/storage/wave.png");
  background-size: contain;
  background-repeat: no-repeat;
+ 
 }
 
 #text-field-sign-design{
@@ -162,7 +163,7 @@
 </style>
 <body> 
 
-    <div class="pageloader is-active is-dark" style="z-index: 100000000">
+    <div class="pageloader is-active is-dark loader-figure-dark" style="z-index: 100000000">
         <span class="title">
         </span>
     </div>
