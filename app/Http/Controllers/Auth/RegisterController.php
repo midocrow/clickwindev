@@ -7,9 +7,15 @@ use App\Providers\RouteServiceProvider;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Mail\WelcomeMail;
+use Illuminate\Support\Facades\Mail;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
+
 
 class RegisterController extends Controller
 {
@@ -32,7 +38,7 @@ class RegisterController extends Controller
      * @var string
      */
 //    protected $redirectTo = RouteServiceProvider::HOME;
-    protected $redirectTo = '/login?success';
+      protected $redirectTo = '/login?success';
 
     /**
      * Create a new controller instance.
@@ -64,7 +70,7 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255', 'unique:users'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8'],
+            //'password' => ['required', 'string', 'min:8'],
         ]);
     }
 
@@ -77,11 +83,16 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         $referrer = User::whereName(session()->get('referrer'))->first();
+         
+        $gp = Str::random(8);
+          
+        Mail::to($data['email'])->send(new WelcomeMail($gp,$gp,$gp));
+
 
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+            'password' => Hash::make($gp),
             'referrer_id' => $referrer ? $referrer->id : null,
         ]);
     }
@@ -92,8 +103,9 @@ class RegisterController extends Controller
 
         DB::table('links')
             ->updateOrInsert(
-                ['zone' => 'blue', 'user_id' => $user->id]
+                ['zone' => 'blue', 'user_id' => $user->id,'created_at'=>Carbon::now()->addHour(),'updated_at'=>Carbon::now()->addHour()]
             );
+
         DB::table('points')
             ->updateOrInsert(
                 ['points' => 0, 'user_id' => $user->id, "position_red" => 0, "position_blue" => 0, "position_green" => 0, "position_gold" => 0]
@@ -106,5 +118,7 @@ class RegisterController extends Controller
                 ->where('user_id', $referrer->id)
                 ->increment('points', 30);
         }
+
+        Auth::logout();
     }
 }

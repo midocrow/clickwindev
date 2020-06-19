@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Route;
-use TCG\Voyager\Facades\Voyager;
+
+use Carbon\Carbon;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,10 @@ use TCG\Voyager\Facades\Voyager;
 Route::get('/reset', function () {
     return view('auth.passwords.reset');
 });
+       
+Route::get('/ran', function () {
+            return Carbon::now()->addHour();
+});
 
 Route::get('mail', function () {
     return view('vendor.mail.html.message');
@@ -28,11 +33,7 @@ Route::get('/date', 'WebScraper@date');
 
 
 
-Auth::routes(['verify' => true]);
-
-Route::group(['prefix' => 'admin'], function () {
-    Voyager::routes();
-});
+Auth::routes();
 
 Route::get('/', function () {
     return view('welcome');
@@ -83,7 +84,7 @@ Route::get('/adver', function () {
 
 
 
-Route::middleware(['verified', 'auth'])->group(function () {
+Route::middleware(['auth'])->group(function () {
     Route::get('/getlink', 'WebScraper@getlink');
     Route::get('/load', 'WebScraper@load');
     Route::get('/get', 'WebScraper@scrap');
@@ -105,34 +106,3 @@ Route::middleware(['verified', 'auth'])->group(function () {
 });
 
 Route::post('/sendContactMail', 'UserFormController@submit');
-
-//Route::get('/home', 'HomeController@index')->name('home');
-
-
-/*
-
-Route::get('/', function () {
-    return view('welcome');
-});
-Auth::routes();
-
-//Route::get('/home', 'HomeController@index')->name('home');
-//Auth::routes();
-
-//Route::get('/home', 'HomeController@index')->name('home');
-/*
-Route::post('/submit', 'UserFormController@submit');
-
-
-
-Route::get('/test', 'WebScraper@index');
-
-Route::post('/check', 'WebScraper@check');
-Route::get('/load', 'WebScraper@load');
-
-/*
-Route::group(['prefix' => 'admin'], function () {
-    Voyager::routes();
-    Route::get('/{any}', 'HomeController@index2')->where('any', '.*');
-});
-*/

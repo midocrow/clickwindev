@@ -4,7 +4,7 @@
 
         <div class="container has-text-centered">
 
-    @if (false)
+    @if (Request::has('success'))
       <article id="xx" class="message is-warning">
          <div class="message-header">
            <p>Sign up confirmation</p>

@@ -3,13 +3,12 @@
 namespace App;
 
 use Carbon\Carbon;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\DB;
 
-class User extends Authenticatable implements MustVerifyEmail
+class User extends Authenticatable /*implements MustVerifyEmail*/
 {
     use Notifiable;
 

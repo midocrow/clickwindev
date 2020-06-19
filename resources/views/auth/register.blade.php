@@ -25,12 +25,12 @@
                             <br>
                             <h3 class="title has-text-white-bis"> Sign up </h3>
                             <div class="">
-                                <form method="POST" action="{{ route( 'login') }}">
+                                <form method="POST" action="{{ route( 'register') }}">
                                     @csrf
 
                                     <div class="field">
                                         <div class="control has-icons-left has-icons-right is-medium">
-                                            <input id="text-field-sign-design" name="name" type="text"  minlength="8" maxlength="20" autocomplete="on" placeholder="Username" autofocus="autofocus" required="required" class="input @error( 'email') is-danger @enderror is-medium" value="{{ old( 'email') }}">
+                                            <input id="text-field-sign-design" name="name" type="text"  minlength="8" maxlength="20" autocomplete="on" placeholder="Username" autofocus="autofocus" required="required" class="input @error( 'name') is-danger @enderror is-medium" value="{{ old( 'name') }}">
                                             <span class="icon is-left is-medium"><i class="fas fa-user" style="color:#FFD419;"></i></span>
                                             <span class="icon is-right has-text-danger is-medium">
                                     <i class="mdi mdi-alert-circle mdi-36px"></i>
