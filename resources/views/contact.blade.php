@@ -18,28 +18,30 @@
       @endif
        
         <h3 class="title has-text-white-bis"> Contact Us</h3> 
-        <div class="box has-background-dark" style="padding:12%;">
+        <div class="box has-background-dark">
             <form method="POST" action="/sendContactMail">
                 @csrf
 
+                
              <div class="field">
-                        <label class="label is-large" style="color:white;text-align:left;">Username</label>
+                        <label class="label is-large" style="color:white;text-align:left;">@auth Username @endauth @guest Name @endguest</label>
                          <div class="control has-icons-left has-icons-right is-large">
-                             <input style="background-color: grey;color:white;" name="name" type="text" autocomplete="on" placeholder="Your Email" autofocus="autofocus" required="required" class="input  @error('email') is-danger  @enderror is-medium" value=" @auth {{  Auth::user()->name }} @endauth @guest {{ old('email') ?? ''}} @endguest"> 
-                             <span class="icon is-left is-medium has-text-warning"><i class="fas fa-user-cog"></i></span> 
+                             <input placeholder="Your name" @auth disabled @endauth style="background-color: grey;color:white;" type="email" name="name"  autocomplete="on" autofocus="autofocus" required="required" class="input  @error('email') is-danger  @enderror is-medium" value=" @auth {{  Auth::user()->name }} @endauth @guest {{ old('name') ?? ''}} @endguest"> 
+                             <span class="icon is-left is-medium has-text-warning"><i class="fas fa-user @auth fa-user-cog @endauth"></i></span> 
                              <span class="icon is-right has-text-danger is-medium">
                                 <i class="mdi mdi-alert-circle mdi-36px"></i>
                             </span> 
                         </div>
-                             @error('email')
+                             @error('name')
                              <p class="help is-danger">{{ $message }}</p>
                              @enderror
             </div>
 
+
             <div class="field">
                 <label class="label is-large" style="color:white;text-align:left;">Email</label>
                  <div class="control has-icons-left has-icons-right is-large">
-                     <input style="background-color: grey;color:white;" name="email" type="email" autocomplete="on" placeholder="Your Email" autofocus="autofocus" required="required" class="input  @error('email') is-danger  @enderror is-large" value=" @auth {{  Auth::user()->email }} @endauth @guest {{ old('email') ?? ''}} @endguest"> 
+                     <input @auth disabled @endauth style="background-color: grey;color:white;" name="email" type="email" autocomplete="on" placeholder="Your Email" autofocus="autofocus" required="required" class="input  @error('email') is-danger  @enderror is-medium" value=" @auth {{  Auth::user()->email }} @endauth @guest {{ old('email') ?? ''}} @endguest"> 
                      <span class="icon is-left is-medium has-text-warning"><i class="fas fa-envelope-open"></i></span> 
                      <span class="icon is-right has-text-danger is-medium">
                         <i class="mdi mdi-alert-circle mdi-36px"></i>
@@ -77,7 +79,7 @@
            @enderror
        </div>
 
-           <button type="submit" class="button is-block is-warning is-large is-fullwidth"> Send </button>
+           <button type="submit"  style="color:black;font-family: bitter;" class="button is-block is-warning is-large is-fullwidth">Send</button>
         </form>
         </div>
     </div>

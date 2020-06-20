@@ -5,7 +5,7 @@
         <div class="container has-text-centered">
 
 
-            <div class="box has-background-black"  style="height: 100%;width:100%;border-radius:50px;">
+            <div class="box has-background-black"  style="margin-top:-30px;border-radius:50px;">
 
                 <div class="columns">
 
@@ -44,7 +44,7 @@
                                     
                                     <button type="submit" style="color:black;font-family: bitter;" class="button is-rounded is-warning is-block is-medium is-fullwidth"> <p>Send password reset link<p> </button>
                                 </form>
-                            </div><br><br>
+                            </div>
                         </div>
 
                     </div>

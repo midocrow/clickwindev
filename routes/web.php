@@ -20,10 +20,12 @@ use Carbon\Carbon;
 Route::get('/reset', function () {
     return view('auth.passwords.reset');
 });
-       
+
 Route::get('/ran', function () {
-            return Carbon::now()->addHour();
+    return Auth::routes();
 });
+
+Route::post('/changePassword', 'HomeController@changePassword')->name('changePassword');
 
 Route::get('mail', function () {
     return view('vendor.mail.html.message');
@@ -39,40 +41,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/free', function () {
-    return view('free');
-});
-
-Route::get('/coupon', function () {
-    return view('coupon');
-});
-
-
-Route::get('/link', function () {
-    return view('link');
-});
-
-Route::get('/store', function () {
-    return view('store');
-});
 
 Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::get('/watch', 'WebScraper@watch');
 
-Route::get('/watch', 'WebScraper@watch');
-
-Route::get('/change', function () {
-    return view('auth.passwords.change');
-});
-
-Route::get('/settings', function () {
-    return view('settings');
-});
-
-Route::post('/img', 'ProfileController@updateImage');
 
 Route::get('/ads', function () {
     return view('ads');
@@ -85,6 +59,35 @@ Route::get('/adver', function () {
 
 
 Route::middleware(['auth'])->group(function () {
+    Route::post('/img', 'ProfileController@updateImage');
+
+    Route::get('/watch', 'WebScraper@watch');
+
+    Route::get('/watch', 'WebScraper@watch');
+
+    Route::get('/change', function () {
+        return view('auth.passwords.change');
+    });
+
+    Route::get('/settings', 'HomeController@settings');
+
+    Route::get('/free', function () {
+        return view('free');
+    });
+
+    Route::get('/coupon', function () {
+        return view('coupon');
+    });
+
+
+    Route::get('/link', function () {
+        return view('link');
+    });
+
+    Route::get('/store', function () {
+        return view('store');
+    });
+
     Route::get('/getlink', 'WebScraper@getlink');
     Route::get('/load', 'WebScraper@load');
     Route::get('/get', 'WebScraper@scrap');

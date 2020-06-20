@@ -19,7 +19,7 @@
           
       @endif
 
-            <div class="box has-background-black" id="wave" style="height: 100%;width:100%;border-radius:50px;">
+            <div class="box has-background-black" id="wave" style="height:100%;width:100%;border-radius:50px;">
 
                 <div class="columns">
 
@@ -41,7 +41,7 @@
                                     @csrf
                                     <div class="field">
                                         <div class="control has-icons-left has-icons-right is-medium">
-                                            <input id="text-field-sign-design" name="email" type="email" autocomplete="on" placeholder="Your email" autofocus="autofocus" required="required" class="input @error( 'email') is-danger @enderror is-medium" value="{{ old( 'email') }}">
+                                            <input onkeypress="return event.charCode != 32" id="text-field-sign-design" name="email" type="email" autocomplete="on" placeholder="Your email" autofocus="autofocus" required="required" class="input @error( 'email') is-danger @enderror is-medium" value="{{ old( 'email') }}">
                                             <span class="icon is-left is-medium"><i class="fas fa-envelope-open" style="color:#FFD419;"></i></span>
                                             <span class="icon is-right has-text-danger is-medium">
                                     <i class="mdi mdi-alert-circle mdi-36px"></i>
@@ -53,12 +53,14 @@
                                     </div>
                                     <div class="field">
                                         <div class="control has-icons-left has-icons-right is-medium">
-                                            <input id="text-field-sign-design" name="password" type="password" autocomplete="on" placeholder="Your password" autofocus="autofocus" required="required" class="input @error( 'email') is-danger
+                                            <input id="ps"  style="box-shadow: none;"  name="password" type="password" autocomplete="on" placeholder="Your password" autofocus="autofocus" required="required" class="input text-field-sign-design @error( 'email') is-danger
                                 @enderror is-medium">
                                             <span class="icon is-left is-medium"><i class="fas fa-lock" style="color:#FFD419;"></i></span>
-                                            <span class="icon is-right has-text-danger is-medium">
-                                   <i class="mdi mdi-alert-circle mdi-36px"></i>
-                               </span>
+                                    
+                                            <a style="pointer-events: initial;" onclick="function hi(){if(document.getElementById('ps').type == 'password'){ document.getElementById('ps').type = 'text'; document.getElementById('icon').classList.toggle('fa-eye-slash'); }else{ document.getElementById('ps').type = 'password'; document.getElementById('icon').classList.toggle('fa-eye'); }  } hi(); return false;" class="icon is-right is-large is-active" >
+                                                <i id="icon" class="fas fa-eye" style="margin-bottom: 20%;"></i>
+                                              </a>
+
                                         </div>
                                         @error('password')
 

@@ -30,7 +30,7 @@
                     href="javascript:void()"
                     style="color:black;"
                   >
-                Submit
+                <p style="font-family: bitter;">Submit</p>
                 </button>
            </div>
           </div>

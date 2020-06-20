@@ -7,7 +7,7 @@
 
         <div class="container has-text-centered">
 
-            <div class="box has-background-black" id="wave" style="border-radius:50px;">
+            <div class="box has-background-black" id="wave" style="margin-top:-40px;border-radius:50px;">
 
                 <div class="columns">
 
@@ -21,8 +21,8 @@
                     <div class="column is-half">
 
                         <div class="column is-10 is-offset-2">
-                            <br> <br>
                             <br>
+                            
                             <h3 class="title has-text-white-bis"> Sign up </h3>
                             <div class="">
                                 <form method="POST" action="{{ route( 'register') }}">
@@ -30,7 +30,7 @@
 
                                     <div class="field">
                                         <div class="control has-icons-left has-icons-right is-medium">
-                                            <input id="text-field-sign-design" name="name" type="text"  minlength="8" maxlength="20" autocomplete="on" placeholder="Username" autofocus="autofocus" required="required" class="input @error( 'name') is-danger @enderror is-medium" value="{{ old( 'name') }}">
+                                            <input onkeypress="return event.charCode != 32" id="name3" onkeyup="myFunction3()" style="box-shadow: none;" maxlength="20" name="name" type="text"  minlength="8" maxlength="20" autocomplete="on" placeholder="Username" autofocus="autofocus" required="required" class="input text-field-sign-design @error( 'name') is-danger @enderror is-medium" value="{{ old( 'name') }}">
                                             <span class="icon is-left is-medium"><i class="fas fa-user" style="color:#FFD419;"></i></span>
                                             <span class="icon is-right has-text-danger is-medium">
                                     <i class="mdi mdi-alert-circle mdi-36px"></i>
@@ -54,11 +54,20 @@
                                         @enderror
                                     </div>
 
-                        
-                                    <br>
+          
+       <center> <div class="g-recaptcha" data-sitekey="6Ldd-aYZAAAAACpH0oBdLSQuGpcAaiBfgQ4aBbKv"></div></center>
+
+<br>
+
+                                    
+                                    <label class="checkbox">
+                                        <input type="checkbox">
+                                        <span style="color:white;">I agree to the </span><a id="sign-button" href="#">terms and conditions</a>
+                                      </label>
+                                      <br><br>
                                     <button type="submit" style="color:black;font-family: bitter;" class="button is-rounded is-warning is-block is-medium is-fullwidth"> <p>Sign up<p> </button>
                                 </form>
-                            </div><br><br>
+                            </div><br>
                             <a id="sign-button" href="{{route( 'login') }}">Already have an account</a> </p>
                         </div>
 

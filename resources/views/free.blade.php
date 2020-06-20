@@ -63,7 +63,7 @@
           <label class="label is-large" style="color: #ffd419">Your referrals</label>
 
           <div class="box has-background-black">
-            <table class="table has-background-black" style="color:white;">
+            <table class="table is-fullwidth has-background-black" style="color:white;">
               <thead>
                 <tr>
                   <th style="color:white;"></th>
@@ -77,7 +77,7 @@
                   <tr>
                     <td>{{ $loop->iteration }}</td>
                     <td>{{  $item->name }}</td>
-                    <td>{{  $item->created_at }}</td>
+                    <td>{{  str_pad($item->created_at->day, 2, '0', STR_PAD_LEFT)  }}-{{ str_pad($item->created_at->month, 2, '0', STR_PAD_LEFT) }}-{{$item->created_at->year  }}</td>
                     <td>{{  $item->null ?? '+30'  }}  <img style="width:45px;display:inline-table;margin-left:-3%;margin-right:0%;" src="/storage/cwin.png" /></td>
                   </tr>
                   @endforeach

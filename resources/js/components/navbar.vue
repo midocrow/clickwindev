@@ -56,6 +56,8 @@
 
     <div id="navbarBasicExample" :class="showNav ? 'navbar-menu  is-active' : 'navbar-menu'">
       <div class="navbar-start">
+        <a v-if="logged" class="navbar-item" href="/home" id="item">Win Zones</a>
+
         <a
           v-if="logged"
           v-on:click="onMenuItemClicked"
@@ -76,6 +78,13 @@
 
         <a class="navbar-item" href="/ads" id="item">Advertising</a>
         <a class="navbar-item" href="/contact" id="item">Contact us</a>
+        <a class="navbar-item" href="/store" id="item">
+          <span
+            v-if="logged"
+            style="background-image: linear-gradient(to right, #f3a121 0%, #fee140 100%);width: 145px;color:black;"
+            class="tag is-medium"
+          >Go Premium</span>
+        </a>
 
         <div class="is-hidden-desktop">
           <a class="navbar-item" href="/profile">
@@ -136,7 +145,7 @@
         </div>
 
         <a v-if="logged" class="navbar-item is-hidden-touch" id="points-menu-item">
-          <span class="tag is-warning is-large" id="points-menu-item">
+          <span class="tag is-warning is-medium" id="points-menu-item">
             {{ $store.state.points }}
             <span class="icon is-right is-large" id="points-menu-item">
               <img src="/storage/cwin.png" />
@@ -212,6 +221,14 @@
               <strong>Sign up</strong>
             </a>
             <a v-if="!logged" class="button is-white is-outlined" href="/login">Log in</a>
+          </div>
+        </div>
+
+        <div style="margin-right:15px;" class="navbar-item has-dropdown is-hoverable">
+          <a v-if="!logged" class="navbar-link is-arrowless" id="item">En</a>
+
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="/free" id="item">Fr</a>
           </div>
         </div>
       </div>

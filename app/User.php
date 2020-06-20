@@ -40,6 +40,7 @@ class User extends Authenticatable /*implements MustVerifyEmail*/
         return $this->referral_link = route('register', ['ref' => $this->name]);
     }
 
+
     /**
      * Get the user's referral link.
      *
@@ -56,6 +57,7 @@ class User extends Authenticatable /*implements MustVerifyEmail*/
         // return dd(array_search(Auth::user()->id, Point::orderBy('points')->pluck('user_id')->toArray()));
         // return dd(Point::orderBy('points')->pluck('user_id')->flip()[Auth::user()->id]);
     }
+
     public function getRankAllAttribute()
     {
         return $this->rankall = DB::table('points')

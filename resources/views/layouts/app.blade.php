@@ -68,6 +68,30 @@
   box-shadow: none;
 }
 
+.text-field-sign-design{
+  border-color: red;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom-width: 2px;
+  border-bottom-color: white;
+  background-color: transparent;
+  border-color: none; 
+  color:white;
+  box-shadow: none;
+}
+#text-field-sign-design:focus:hover{
+  border-bottom-color: #ffd419;
+}
+
+#text-field-sign-design:hover{
+  border-bottom-color: #ffd419;
+}
+
+.switch[type=checkbox].is-warning:checked+label::before,
+.switch[type=checkbox].is-warning:checked+label:before {
+    background: #ffd419
+}
 
 .wrapper {
   display: flex;
@@ -169,9 +193,7 @@
     </div>
 
     <div id="app">
-        @auth
-        <top rankall="{{ Auth::user()->rankall }}"></top>
-        @endauth
+        
         
         <section class="hero is-dark is-fullheight">
             <!-- Hero head: will stick at the top -->
@@ -202,6 +224,7 @@
 
     </div>
 
+    <script src="https://www.google.com/recaptcha/api.js"></script>
 
   <script>            
     
@@ -235,6 +258,55 @@
      window.onload = function(){
          document.getElementsByClassName('pageloader')[0].setAttribute('class','pageloader is-dark');
      }
+
+
+     function myFunction(){
+      // alert(document.getElementById('ps').value);
+       var x = document.getElementById('ps').value;
+       if(x.length == 0){
+        var x = document.getElementById('ps').style.borderBottomColor = "";
+       }else if(x.length < 8){
+        var x = document.getElementById('ps').style.borderBottomColor = "red";
+       }else{
+        var x = document.getElementById('ps').style.borderBottomColor = "green";
+
+       }
+     }
+
+
+     function myFunction2(){
+      // alert(document.getElementById('ps').value);
+       var x1 = document.getElementById('ps').value;
+       var x = document.getElementById('ps2').value;
+
+       if(x.length == 0){
+       document.getElementById('ps2').style.borderBottomColor = "";
+       }else if(x.length < 8){
+         document.getElementById('ps2').style.borderBottomColor = "red";
+       }else{
+         if(x == x1)
+          document.getElementById('ps2').style.borderBottomColor = "green";
+         else
+          document.getElementById('ps2').style.borderBottomColor = "red";
+
+       }
+
+      }
+
+      function myFunction3(){
+      // alert(document.getElementById('ps').value);
+       var x = document.getElementById('name3').value;
+       if(x.length == 0){
+        var x = document.getElementById('name3').style.borderBottomColor = "";
+       }else if(x.length < 8){
+        var x = document.getElementById('name3').style.borderBottomColor = "red";
+       }else{
+        var x = document.getElementById('name3').style.borderBottomColor = "green";
+
+       }
+     }
+     
+     
   </script>
 
 </body>

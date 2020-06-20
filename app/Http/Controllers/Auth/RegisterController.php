@@ -37,8 +37,8 @@ class RegisterController extends Controller
      *
      * @var string
      */
-//    protected $redirectTo = RouteServiceProvider::HOME;
-      protected $redirectTo = '/login?success';
+    //    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = '/login?success';
 
     /**
      * Create a new controller instance.
@@ -68,7 +68,7 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255', 'unique:users'],
+            'name' => ['required', 'string', 'max:20', 'unique:users', 'alpha_dash'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             //'password' => ['required', 'string', 'min:8'],
         ]);
@@ -83,19 +83,21 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         $referrer = User::whereName(session()->get('referrer'))->first();
-         
-        $gp = Str::random(8);
-          
-        Mail::to($data['email'])->send(new WelcomeMail($gp,$gp,$gp));
 
+        $password = Str::random(10);
 
-        return User::create([
-            'name' => $data['name'],
+        $user = User::create([
+            'name' =>  str_replace(' ', '', $data['name']),
             'email' => $data['email'],
-            'password' => Hash::make($gp),
+            'password' => Hash::make($password),
             'referrer_id' => $referrer ? $referrer->id : null,
         ]);
+
+        Mail::to($data['email'])->send(new WelcomeMail($password, '', ''));
+
+        return $user;
     }
+
 
     protected function registered(Request $request, $user)
     {
@@ -103,7 +105,7 @@ class RegisterController extends Controller
 
         DB::table('links')
             ->updateOrInsert(
-                ['zone' => 'blue', 'user_id' => $user->id,'created_at'=>Carbon::now()->addHour(),'updated_at'=>Carbon::now()->addHour()]
+                ['zone' => 'blue', 'user_id' => $user->id, 'created_at' => Carbon::now()->addHour(), 'updated_at' => Carbon::now()->addHour()]
             );
 
         DB::table('points')
