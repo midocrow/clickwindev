@@ -29,6 +29,7 @@
         "@balkangraph/orgchart.js": "^6.2.66",
         "aos": "^3.0.0-beta.6",
         "bulma": "^0.8.1",
+        "bulma-badge": "^3.0.1",
         "bulma-pageloader": "^0.3.0",
         "bulma-pricingtable": "^0.2.0",
         "bulma-switch": "^2.0.0",

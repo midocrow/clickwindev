@@ -183,6 +183,18 @@
     transform: translate3d(0, 0, 0);
   }
 }
+#notifi:hover{
+  color:#ffd419;
+  cursor: pointer;
+}
+
+[data-badge].has-badge-outlined.has-badge-danger::after {
+    background: #ff3860;
+    box-shadow: none;
+    border: 1px solid #ff3860;
+    color: white;
+}
+
 
 </style>
 <body> 
