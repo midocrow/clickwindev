@@ -6,7 +6,7 @@
    <div class="box has-background-dark"  style="margin-right:50px;">
     <p style="color: white;text-shadow:0px 0px 0px transparent;">     
       If you want to belong to the <span style="color:#e3342f;"> Premium Community </span>  which the click is worth 
-      10 Cwins <img style="width:36px;display:inline-block;margin-left:-1%;margin-bottom:-0.5%;;margin-right:-0.9%;" src="/storage/cwin.png" />
+      10 Cwins <img style="width:22px;margin-bottom:-5px;" src="/storage/cwin.png" />
       and to improve your global ranking, you have to subscribe to one of the premium offers that suits you and you will enjoy this precious advantage.
     </p>
   </div>
@@ -25,12 +25,12 @@
         <div class="plan-item">7 days in premium zone
           </div>
 
-        <div class="plan-item">Link click = 10 Cwins <img style="width:30px;display:inline-block;margin-bottom:-1.5%;margin-left:-3%" src="/storage/cwin.png" />
+        <div class="plan-item">Link click = 10 Cwins <img style="width:20px;margin-bottom:-5px;" src="/storage/cwin.png" />
         </div>
 
         <div class="plan-item">
         +100 Cwins
-        <img style="width:30px;display:inline-block;margin-bottom:-1.5%;margin-left:-3%" src="/storage/cwin.png" />
+        <img style="width:20px;margin-bottom:-5px;" src="/storage/cwin.png" />
         </div>
         <div class="plan-item">More clicks</div>
       </div>
@@ -52,12 +52,12 @@
         <div class="plan-item">15 days in premium zone
           </div>
 
-        <div class="plan-item">Link click = 10 Cwins <img style="width:30px;display:inline-block;margin-bottom:-1.5%;margin-left:-3%" src="/storage/cwin.png" />
+        <div class="plan-item">Link click = 10 Cwins <img style="width:20px;margin-bottom:-5px;" src="/storage/cwin.png" />
         </div>
 
         <div class="plan-item">
         +200 Cwins
-        <img style="width:30px;display:inline-block;margin-bottom:-1.5%;margin-left:-3%" src="/storage/cwin.png" />
+        <img style="width:20px;margin-bottom:-5px;" src="/storage/cwin.png" />
         </div>
         <div class="plan-item">More clicks</div>
       </div>
@@ -78,12 +78,12 @@
         <div class="plan-item">30 days in premium zone
           </div>
 
-        <div class="plan-item">Link click = 10 Cwins <img style="width:30px;display:inline-block;margin-bottom:-1.5%;margin-left:-3%" src="/storage/cwin.png" />
+        <div class="plan-item">Link click = 10 Cwins<img style="width:20px;margin-bottom:-5px;" src="/storage/cwin.png" />
         </div>
 
         <div class="plan-item">
         +500 Cwins
-        <img style="width:30px;display:inline-block;margin-bottom:-1.5%;margin-left:-3%" src="/storage/cwin.png" />
+        <img style="width:20px;margin-bottom:-5px;" src="/storage/cwin.png" />
         </div>
         <div class="plan-item">More clicks</div>
       </div>
@@ -100,7 +100,7 @@
   <div class="box has-background-dark"  style="margin-right:50px;">
     <p style="color: white;text-shadow:0px 0px 0px white;">     
       If you want to improve your global ranking you must increase and purchase more Cwins 
-      <img style="width:36px;display:inline-block;margin-left:-1%;margin-bottom:-0.5%;;margin-right:-0.9%;" src="/storage/cwin.png" />
+      <img style="width:20px;margin-bottom:-5px;" src="/storage/cwin.png" />
       <br>from one of these offers
     </p>
   </div>
@@ -109,7 +109,7 @@
    <div class="pricing-table">
     
     <div class="pricing-plan is-active is-danger" style="margin-right:50px;">
-      <div class="plan-header" style="color:white;border-bottom:1px solid grey;">1000 Cwins <img style="width:45px;display:inline-block;margin-bottom:-2.8%;margin-left:-5%" src="/storage/cwin.png" /></div>
+      <div class="plan-header" style="color:white;border-bottom:1px solid grey;">1000 Cwins <img style="width:20px;margin-bottom:-5px;" src="/storage/cwin.png" /></div>
       <div class="plan-price" style="border-bottom:1px solid grey;">
         <span class="plan-price-amount" style="color:#ffd419">
           <span class="plan-price-currency"></span>
@@ -124,7 +124,7 @@
     </div>
   
     <div class="pricing-plan is-active is-danger" style="margin-right:50px;">
-      <div class="plan-header" style="color:white;border-bottom:1px solid grey;">5000 Cwins <img style="width:45px;display:inline-block;margin-bottom:-2.8%;margin-left:-5%" src="/storage/cwin.png" /></div>
+      <div class="plan-header" style="color:white;border-bottom:1px solid grey;">5000 Cwins <img style="width:20px;margin-bottom:-5px;" src="/storage/cwin.png" /></div>
       <div class="plan-price" style="border-bottom:1px solid grey;">
         <span class="plan-price-amount" style="color:#ffd419">
           <span class="plan-price-currency"></span>
@@ -138,7 +138,7 @@
     </div>
   
     <div class="pricing-plan is-active is-danger" style="margin-right:50px;">
-      <div class="plan-header" style="color:white;border-bottom:1px solid grey;">10 000 Cwins <img style="width:45px;display:inline-block;margin-bottom:-2.8%;margin-left:-5%" src="/storage/cwin.png" /></div>
+      <div class="plan-header" style="color:white;border-bottom:1px solid grey;">10 000 Cwins <img style="width:20px;margin-bottom:-5px;" src="/storage/cwin.png" /></div>
       <div class="plan-price" style="border-bottom:1px solid grey;">
         <span class="plan-price-amount" style="color:#ffd419">
           <span class="plan-price-currency"></span>

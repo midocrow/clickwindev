@@ -67,7 +67,6 @@ export default {
             this.errors = error.response.data.errors || {};
           }
         });
-      //console.log("help me", this.fields.name);
     }
   }
 };

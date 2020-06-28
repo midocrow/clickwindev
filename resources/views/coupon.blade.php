@@ -8,7 +8,10 @@
         <div class="box has-background-dark">
          <h3 style="color:#ffd419" class="title is-warning">Coupon code</h3>
           <p style="color: white">
-            You can receive 50 free Cwins <img style="width:45px;display:inline-block;margin-bottom:-0.8%;margin-left:-1.3%;margin-right:-1%;" src="/storage/cwin.png" />
+            You can receive 50 free Cwins <img
+            style="width:20px;margin-bottom:-4px;"
+            src="/storage/cwin.png"
+          />
              via « Coupon Code » that will be published on our 
             social media and you must copy them before they expire in 1 hour left and validate them here.
           </p>

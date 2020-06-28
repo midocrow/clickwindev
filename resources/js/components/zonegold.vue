@@ -18,7 +18,10 @@
                 <transition name="bounce">
                   <p id="pp" v-if="show">+20</p>
                 </transition>
-                <img src="/storage/cwin.png" width="55px" />
+                <img
+                  style="width:20px;margin-left:3px;margin-bottom:1.5px;"
+                  src="/storage/cwin.png"
+                />
               </span>
             </div>
           </div>
@@ -118,12 +121,10 @@ export default {
     };
   },
   mounted() {
-    console.log("Component mounted " + this.fields.zone);
     this.load();
   },
   methods: {
     open() {
-      console.log(this.fields.link);
       window.value = this.zone;
       window.open("/watch" + this.fields.link + "?autoplay=1");
     },
@@ -136,8 +137,6 @@ export default {
           }
         })
         .then(response => {
-          console.log(response.data);
-
           this.fields.link = "?link=" + response.data;
           //this.fields.code = response.data;
           this.isloading = false;
@@ -159,7 +158,6 @@ export default {
           //alert("Message sent!");
           this.isError = false;
           this.fields.code = response.data[0].code;
-          console.log(response.data);
 
           this.show = !this.show;
           setTimeout(() => {

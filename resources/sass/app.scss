@@ -8,7 +8,7 @@ $navbar-dropdown-background-color: black;
 $navbar-divider-background-color: black;
 $navbar-tab-active-border-bottom-color: orange;
 $warning: #ffd419;
-$navbar-height: 5rem;
+$navbar-height: 2rem;
 $navbar-item-img-max-height: 4rem;
 $navbar-background-color: red;
 $navbar-item-color: green;
@@ -39,3 +39,4 @@ $tabs-link-hover-border-bottom-color: #ffd419;
 @import "~bulma-pricingtable";
 @import "~bulma-switch";
 @import "~bulma-badge";
+@import "~aos/dist/aos.css"

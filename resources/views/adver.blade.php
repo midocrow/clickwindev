@@ -7,7 +7,7 @@
 
    <div class="box has-background-dark"  style="margin-right:50px;">
     <p style="color: white;text-shadow:0px 0px 0px white;">     
-        Take advantage from our best offers and be a part of our <span style="color:#f9c963;"> VIP community</span> .Your link will be posted by our team work in VIP Zone without adds or pop-ups with direct access and with a lot of visitors.
+        Take advantage from our best offers and be a part of our <span style="color:#f9c963;"> VIP community</span> .Your link will be posted by our team work in VIP Zone without ads or pop-ups with direct access and with a lot of visitors.
     </p>
    </div>
 
@@ -34,7 +34,7 @@
         <div class="plan-item">More visitors</div>
       </div>
       <div class="plan-footer" style="background-color: black">
-        <button class="button is-fullwidth" style="background-color: #f9c963;color:black;">Choose</button>
+        <button onClick="window.plan=10;document.getElementById('modal').classList.toggle('is-active')" class="button is-fullwidth" style="background-color: #f9c963;color:black;">Choose</button>
       </div>
     </div>
 
@@ -59,7 +59,7 @@
           <div class="plan-item">More visitors</div>
         </div>
         <div class="plan-footer" style="background-color: black">
-          <button class="button is-fullwidth" style="background-color: #f9c963;color:black;">Choose</button>
+          <button onClick="window.plan=10;document.getElementById('modal').classList.toggle('is-active')" class="button is-fullwidth" style="background-color: #f9c963;color:black;">Choose</button>
         </div>
       </div>
   
@@ -84,18 +84,18 @@
           <div class="plan-item">More visitors</div>
         </div>
         <div class="plan-footer" style="background-color: black">
-          <button class="button is-fullwidth" style="background-color: #f9c963;color:black;">Choose</button>
+          <button onClick="window.plan=10;document.getElementById('modal').classList.toggle('is-active')" class="button is-fullwidth" style="background-color: #f9c963;color:black;">Choose</button>
         </div>
       </div>
 
   </div>
 
-  <div class="modal">
+  <div class="modal" id="modal">
     <div class="modal-background"></div>
     <div class="modal-card" >
       <header class="modal-card-head" style="background-color: black">
         <p class="modal-card-title" style="color:#ffd419;text-shadow:0px 0px 0px white;">Complete your subscription</p>
-        <button class="delete" aria-label="close"></button>
+        <button onClick="document.getElementById('modal').classList.toggle('is-active')"  class="delete" aria-label="close"></button>
       </header>
       <section class="modal-card-body" style="background-color: black">
         <!-- Content ... -->
@@ -109,7 +109,7 @@
               <div class="control has-icons-left has-icons-right is-medium">
           
                       <div class="select is-medium is-fullwidth">
-                          <select  style="background-color: grey;color:white;" onchange="window.open('profile?c='+this.value,'_self')">
+                          <select style="background-color: grey;color:white;">
                                <option>7 Days / 10$</option>
                                <option>15 Days / 15$</option>
                                <option>30 Days / 20$</option>
@@ -157,7 +157,7 @@
                 <div class="control has-icons-left has-icons-right is-medium">
             
                         <div class="select is-medium is-fullwidth">
-                            <select  style="background-color: grey;color:white;" onchange="window.open('profile?c='+this.value,'_self')">
+                            <select  style="background-color: grey;color:white;">
                                  <option>Youtube channel</option>
                                  <option>Instagram page</option>
                                  <option>Facebook page</option>
@@ -208,7 +208,7 @@
       </section>
       <footer class="modal-card-foot" style="background-color: black">
         <button class="button is-warning">Send</button>
-        <button class="button is-grey">Cancel</button>
+        <button onClick="document.getElementById('modal').classList.toggle('is-active')"  class="button is-grey">Cancel</button>
       </footer>
     </div>
 </div>

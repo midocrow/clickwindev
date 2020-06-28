@@ -8,12 +8,11 @@
         <div class="box has-background-dark">
           <p style="color: white">
             Invite your friends to join ClickWin by sharing your referral link and win
-            30  <img style="width:35px;display:inline-block;margin-bottom:-0.5%;margin-left:-1.3%;margin-right:-1%;" src="/storage/cwin.png" />
+            30 Cwins <img style="width:22px;margin-bottom:-5px;" src="/storage/cwin.png" />
             for each friend
           <br>
             + 5% Cwins from the total Cwins collected by every referral you add
           </p>
-
 
 <br>
     <div class="columns">

@@ -17,7 +17,6 @@
 <script>
 export default {
   mounted() {
-    console.log("mounted...");
     this.date = new Date().toLocaleString() + "";
     this.display();
   },
@@ -31,14 +30,11 @@ export default {
     };
   },
   methods: {
-    load: function() {
-      console.log("ok");
-    },
+    load: function() {},
     display: function() {
       axios("/get")
         .then(response => {
           const html = response.data;
-          console.log(html);
           this.cases = html[1];
           this.dead = html[4];
           this.recovred = html[3];

@@ -25,6 +25,7 @@
 
 </head>
 <style>
+  
     .headline-features{background-image:linear-gradient(164deg,#1b293a 44%,#4592a0 110%);border-top:25px solid #3b4b64;padding-bottom:0}
     .hero{font-family:Bitter,serif;height:100%;min-height:100vh;}
     #flip-card-day {display: none;}
@@ -221,7 +222,8 @@
             </div>
 
             <!-- Hero content: will be in the middle -->
-            <div class="hero-body">
+            
+            <div class="hero-body" >
                 <div class="container has-text-centered">
                     <div class="container">
                         <main class="py-4">
@@ -269,6 +271,7 @@
 
      window.onload = function(){
          document.getElementsByClassName('pageloader')[0].setAttribute('class','pageloader is-dark');
+         document.getElementById('video').play();
      }
 
 

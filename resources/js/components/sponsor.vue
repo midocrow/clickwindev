@@ -52,10 +52,7 @@
 <script>
 export default {
   mounted() {
-    console.log("coco");
-    console.log(this.referrallink);
     this._referrals = JSON.parse(this.referrals);
-    console.log(this._referrals);
   },
   props: ["referrallink", "referrals"],
   data() {
