@@ -4,13 +4,14 @@
 @import "variables";
 // Bootstrap
 //@import "~bootstrap/scss/bootstrap";
+$navbar-background-color: red;
+$navbar-box-shadow-color: red;
 $navbar-dropdown-background-color: black;
 $navbar-divider-background-color: black;
 $navbar-tab-active-border-bottom-color: orange;
 $warning: #ffd419;
 $navbar-height: 2rem;
 $navbar-item-img-max-height: 4rem;
-$navbar-background-color: red;
 $navbar-item-color: green;
 $navbar-item-active-color: blue;
 $dropdown-content-background-color: $black;

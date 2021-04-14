@@ -139,18 +139,20 @@ class WebScraper extends Controller
 
     public function addlink(Request $request)
     {
-
         if (filter_var($request->link, FILTER_VALIDATE_URL, FILTER_FLAG_PATH_REQUIRED)) {
 
             if (strpos($request->link, 'twitter.com')) {
 
-                DB::table('links')
-                    ->updateOrInsert(
-                        ['user_id' => Auth::id()],
-                        ['link' => $request->link, 'code' => $request->code, 'updated_at' => now()]
-                    );
+                if (Auth::user()->link->link != $request->link) {
+                    DB::table('links')
+                        ->updateOrInsert(
+                            ['user_id' => Auth::id()],
+                            ['link' => $request->link, 'code' => $request->code, 'updated_at' => now()]
+                        );
 
-                return response()->json("updated", 200);
+                    return response()->json("updated
+                    ", 200);
+                }
             }
         }
 

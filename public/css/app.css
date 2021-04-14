@@ -8097,7 +8097,7 @@ a.list-item {
 }
 
 .navbar.has-shadow {
-  box-shadow: 0 2px 0 0 whitesmoke;
+  box-shadow: 0 2px 0 0 red;
 }
 
 .navbar.is-fixed-bottom, .navbar.is-fixed-top {
@@ -8112,7 +8112,7 @@ a.list-item {
 }
 
 .navbar.is-fixed-bottom.has-shadow {
-  box-shadow: 0 -2px 0 0 whitesmoke;
+  box-shadow: 0 -2px 0 0 red;
 }
 
 .navbar.is-fixed-top {

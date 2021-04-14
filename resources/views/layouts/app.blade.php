@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="has-navbar-fixed-top" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <meta charset="utf-8">
@@ -196,9 +196,8 @@
     color: white;
 }
 
-
 </style>
-<body> 
+<body class="has-navbar-fixed-top"> 
 
     <div class="pageloader is-active is-dark loader-figure-dark" style="z-index: 100000000">
         <span class="title">

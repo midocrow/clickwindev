@@ -199,7 +199,7 @@ export default {
             showConfirmButton: false,
             timer: 1000
           });
-          //location.replace("/home");
+          location.replace("/link");
         })
         .catch(error => {
           Swal.fire({
