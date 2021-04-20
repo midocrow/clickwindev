@@ -148,7 +148,7 @@
               </div>
             </div>
           </div>
-          <div  class="content"  :style="{ 'display': 'none' }" v-if="ended === true">
+          <div  class="content"  v-if="ended === true">
             <h1 :style="{ 'color': 'white','font-size':'20px' }">There is no link at the moment into this zone,<br>try to refresh the page or wait until the zone be full of links you can go to <a href="/free" :style="{ 'color': 'orange' }">Free Cwins page</a></h1>
           </div>
         </div>
