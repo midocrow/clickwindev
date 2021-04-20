@@ -20,6 +20,13 @@ use function GuzzleHttp\Promise\all;
 class WebScraper extends Controller
 {
 
+    public function landing()
+    {
+        if (Auth::check()) {
+            return view('home');
+        }
+        return view('welcome');
+    }
 
     public function date()
     {
