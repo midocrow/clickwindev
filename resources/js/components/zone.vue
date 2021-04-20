@@ -42,7 +42,7 @@
             </div>
           </div>
 
-          <div class="content">
+          <div class="content" v-if="ended === false">
             <div class="field has-addons">
               <div class="control is-large is-expanded">
                 <input
@@ -86,13 +86,13 @@
                                                     ? 'input is-medium is-rounded is-danger'
                                                     : 'input has-background-light is-medium is-rounded'
                                             "
-                      type="text"
+                      type="number"
                       v-model="fields.code"
                       placeholder="Confirm tracking code"
                       required
-                      maxlength="16"
-                      minlength="16"
-                      size="16"
+                      maxlength="6"
+                      minlength="6"
+                      size="6"
                     />
                   </div>
                   <div class="control">
@@ -148,6 +148,9 @@
               </div>
             </div>
           </div>
+          <div  class="content"  :style="{ 'display': 'none' }" v-if="ended === true">
+            <h1 :style="{ 'color': 'white','font-size':'20px' }">There is no link at the moment into this zone,<br>try to refresh the page or wait until the zone be full of links you can go to <a href="/free" :style="{ 'color': 'orange' }">Free Cwins page</a></h1>
+          </div>
         </div>
       </div>
     </form>
@@ -169,6 +172,7 @@ export default {
       points: "203",
       isloading: false,
       isError: false,
+      ended: false,
       errors: {}
     };
   },
@@ -192,13 +196,17 @@ export default {
         })
         .then(response => {
           //console.log(response.data[0]);
-
+          if(response.data[0] !== null){
           this.fields.link = response.data[0].link;
-          this.fields.code = response.data[0].code;
+          this.fields.code = response.data[0].code.substring(6,12);
 
           this.fields.name = response.data[0].name;
           this.fields.count = response.data[1] + 1;
           this.isloading = false;
+          }else{
+            this.ended = true;
+            console.log(this.ended);
+          }
         })
         .catch(error => {
           this.isloading = false;

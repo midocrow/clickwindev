@@ -2,7 +2,7 @@
   <nav class="navbar is-dark is-fixed-top" style="background:black;" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a class="navbar-item" id="logo" href="/">
-        <img id="img" src="/storage/CW2.png" width="75px" />
+        <img id="img" src="/storage/logo.png" width="75px" />
       </a>
 
       <a
@@ -30,7 +30,7 @@
           href="/link"
           id="item"
         >Add link</a>
-        <a v-if="logged" class="navbar-item" href="/store" id="item">Premium & Cwins</a>
+        
 
         <div class="navbar-item has-dropdown is-hoverable">
           <a v-if="logged" class="navbar-link is-arrowless" id="item">Free Cwins</a>
@@ -49,6 +49,13 @@
             style="background-image: linear-gradient(to top, #ff0844 0%,#f5576c 100%);width: 145px;color:white;"
             class="tag is-medium"
           >Go Premium</span>
+        </a>
+        <a class="navbar-item" href="/adver" id="item">
+          <span
+            v-if="logged"
+            style="background-image: linear-gradient(to right, #f3a121 0%, #fee140 100%);width: 145px;color:white;"
+            class="tag is-medium"
+          >Go VIP</span>
         </a>
       </div>
 
@@ -307,6 +314,7 @@
 <script>
 export default {
   mounted() {
+    
     this.loadpoints();
     this.vnotifs = JSON.parse(this.notifs);
   },
@@ -387,7 +395,8 @@ export default {
   background: transparent;
 }
 #item:hover {
-  background-color: black;
+  background-color:black;
+  color:#f3ca12;;
 }
 .navbar-dropdown {
   background: black;

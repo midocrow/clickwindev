@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Notification;
 use MenaraSolutions\Geographer\Earth;
 use Symfony\Component\DomCrawler\Crawler;
+use Illuminate\Support\Str;
 
 use function GuzzleHttp\Promise\all;
 
@@ -45,8 +46,8 @@ class WebScraper extends Controller
         $earth = new Earth();
         $countries = $earth->getCountries()->toArray();
         $countrie = $earth->getCountries()->findOne(['name' => 'Australia']);
-
-        return response()->json($countrie->getStates()->toArray(), 200);
+        //$countrie->getStates()->toArray()
+        return response()->json(substr('clik.326724.win', 5, -4), 200);
     }
 
     public function loadpoints()
@@ -86,7 +87,7 @@ class WebScraper extends Controller
             ->where('link', '=', $request->link)
             ->get();
 
-        if ($link[0]->code == $request->code) {
+        if (substr($link[0]->code, 6, -4) == $request->code) {
 
             $affected = DB::table('points')
                 ->where('user_id', Auth::id())
@@ -126,7 +127,7 @@ class WebScraper extends Controller
 
     public function generatecode()
     {
-        return response()->json('click.' . rand(100000, 999999) . '.win', 200);
+        return response()->json('clik.' . rand(100000, 999999) . '.win', 200);
     }
 
     public function skiplink(Request $request)

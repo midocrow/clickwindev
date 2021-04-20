@@ -9,11 +9,7 @@
                 />
             </div>
             <div class="column is-4 is-hidden-mobile">
-                <a href="/store">
-                    <figure class="image is-256x256">
-                        <img src="/storage/pub/vip_pass.png" />
-                    </figure>
-                </a>
+                
             </div>
         </div>
 
@@ -26,11 +22,7 @@
                 />
             </div>
             <div class="column is-4 is-hidden-mobile">
-                <a href="/store">
-                    <figure class="image is-256x256">
-                        <img src="/storage/pub/premium_pass.png" />
-                    </figure>
-                </a>
+               
             </div>
         </div>
 
@@ -43,11 +35,7 @@
                 />
             </div>
             <div class="column is-4 is-hidden-mobile">
-                <a href="/store">
-                    <figure class="image is-256x256">
-                        <img src="/storage/pub/youtube.png" />
-                    </figure>
-                </a>
+                
             </div>
         </div>
 
@@ -60,14 +48,7 @@
                 />
             </div>
             <div class="column is-4 is-hidden-mobile">
-                <a href="/store">
-                    <figure class="image is-256x256">
-                        <img
-                            src="/storage/pub/facebook.png"
-                            :style="{ 'margin-left': '0%' }"
-                        />
-                    </figure>
-                </a>
+                
             </div>
         </div>
     </div>
