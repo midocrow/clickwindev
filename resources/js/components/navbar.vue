@@ -55,7 +55,7 @@
             v-if="logged"
             style="background-image: linear-gradient(to right, #f3a121 0%, #fee140 100%);width: 145px;color:white;"
             class="tag is-medium"
-          >Go VIP</span>
+          >For Ads</span>
         </a>
       </div>
 
