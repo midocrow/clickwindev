@@ -2,7 +2,7 @@
   <nav class="navbar is-dark is-fixed-top" style="background:black;" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a class="navbar-item" id="logo" href="/">
-        <img id="img" src="/storage/logo.png" width="75px" />
+        <img id="img" src="/storage/logo.png" width="90px" />
       </a>
 
       <a
@@ -55,7 +55,7 @@
             v-if="logged"
             style="background-image: linear-gradient(to right, #f3a121 0%, #fee140 100%);width: 145px;color:white;"
             class="tag is-medium"
-          >Go VIP</span>
+          >For Ads</span>
         </a>
       </div>
 

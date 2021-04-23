@@ -37,9 +37,8 @@ Route::get('/date', 'WebScraper@date');
 
 Auth::routes();
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'WebScraper@landing');
+
 
 
 Route::get('/contact', function () {

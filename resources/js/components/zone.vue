@@ -93,6 +93,7 @@
                       maxlength="6"
                       minlength="6"
                       size="6"
+                      
                     />
                   </div>
                   <div class="control">
@@ -148,8 +149,9 @@
               </div>
             </div>
           </div>
-          <div  class="content"  :style="{ 'display': 'none' }" v-if="ended === true">
-            <h1 :style="{ 'color': 'white','font-size':'20px' }">There is no link at the moment into this zone,<br>try to refresh the page or wait until the zone be full of links you can go to <a href="/free" :style="{ 'color': 'orange' }">Free Cwins page</a></h1>
+          <div  class="content"  v-if="ended === true">
+            <center><img :style="{'width':'50px'}" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/White_lock.svg/1200px-White_lock.svg.png"></center>
+            <p :style="{ 'color': 'greylight','font-size':'15px','font-family': 'Arial, Helvetica, sans-serif'}">There is no link at the moment into this zone, try to refresh the page or wait until the zone be full of links you can go to <a href="/free" :style="{ 'color': '#f3ca12' }">Free Cwins page</a></p>
           </div>
         </div>
       </div>
@@ -347,5 +349,9 @@ p {
 }
 a:hover {
   color: unset;
+}
+h3{
+          font-family: Arial, Helvetica, sans-serif;
+
 }
 </style>

@@ -20,6 +20,13 @@ use function GuzzleHttp\Promise\all;
 class WebScraper extends Controller
 {
 
+    public function landing()
+    {
+        if (Auth::check()) {
+            return view('home');
+        }
+        return view('welcome');
+    }
 
     public function date()
     {
@@ -71,13 +78,25 @@ class WebScraper extends Controller
         return response()->json($link, 200);
     }
 
-    public function gettopten()
+    public function gettopten(Request $request)
     {
-        $topusers = DB::table('users')
-            ->orderBy('points', 'desc')
-            ->join('points', 'users.id', '=', 'points.user_id')
-            ->select('points.points', 'users.name')
-            ->limit(10)->get();
+        $zone = $request->zone;
+        $topusers = [];
+        if ($zone == 'all') {
+            $topusers = DB::table('users')
+                ->orderBy('points', 'desc')
+                ->join('points', 'users.id', '=', 'points.user_id')
+                ->select('points.points', 'users.name')
+                ->limit(10)->get();
+        } else {
+            $topusers = DB::table('users')
+                ->join('links', 'users.id', '=', 'links.user_id')
+                ->join('points', 'users.id', '=', 'points.user_id')
+                ->where('links.zone', $request->zone)
+                ->orderBy('points', 'desc')
+                ->select('points.points', 'users.name')
+                ->limit(10)->get();
+        }
         return response()->json($topusers, 200);
     }
 

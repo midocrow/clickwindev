@@ -41,10 +41,10 @@
       <div id="willbeshown" v-if="isshowen">
         <p class="panel-tabs">
           <a class="is-active">
-            <span class="tag has-background-grey-lighter" :style="{ width: '55px' }">All</span>
+            <span @click="change('all')" class="tag has-background-grey-lighter" :style="{ width: '55px' }">All</span>
           </a>
           <a>
-            <span
+            <span @click="change('red')"
               class="tag is-danger"
               :style="{
                                 'background-image':
@@ -54,7 +54,7 @@
             >Premium</span>
           </a>
           <a>
-            <span
+            <span @click="change('blue')"
               class="tag is-info"
               :style="{
                                 'background-image':
@@ -64,7 +64,7 @@
             >Bonus</span>
           </a>
           <a>
-            <span
+            <span @click="change('green')"
               class="tag is-success"
               :style="{
                                 'background-image':
@@ -84,11 +84,13 @@
     </p>
   </div>
         -->
-        <a v-for="(user, index) in topusers" class="panel-block" :key="index">
+        <progress v-if="loading" class="progress is-small is-warning" max="100"></progress>
+        <div v-if="!loading">
+          <a v-for="(user, index) in topusers" class="panel-block" :key="index">
           <span class="panel-icon">{{ index + 1 }}</span>
           <div class="field">
-            <div class="control is-expanded">
-              <span>{{ user.name + " " }}</span>
+            <div class="control is-expanded is-dark">
+              <span :style="{ 'color': 'black' }">{{ user.name + " " }}</span>
             </div>
             <div class="control is-expanded">
               <span class="tag is-warning">
@@ -111,6 +113,8 @@
             </div>
           </div>
         </a>
+        </div>
+        
       </div>
     </article>
   </div>
@@ -122,20 +126,32 @@ export default {
   data() {
     return {
       isshowen: false,
+      loading: true,
       topusers: []
     };
   },
   mounted() {
+    this.zone = 'all';
     this.gettopten();
   },
   methods: {
     gettopten: function() {
       axios
-        .get("/gettopten")
+        .get("/gettopten", {
+          params: {
+            zone: this.zone
+          }
+        })
         .then(response => {
           this.topusers = response.data;
+          this.loading = false;
         })
         .catch(error => {});
+    },
+    change: function(x){
+      this.zone = x;
+      this.loading = true;
+      this.gettopten();
     }
   }
 };
