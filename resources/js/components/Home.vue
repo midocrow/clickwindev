@@ -6,12 +6,7 @@
       <br />
       <br />
       <div class="columns">
-        <div class="column is-two-thirds">
-          <img
-            v-if="false"
-            src="/storage/CW2.png"
-            alt="FaultHero: automatic reporting and notification"
-          />
+        <div v-if="!expired && edit === false && currentlink !== ''"  class="column is-two-thirds">
 
           <span
             :class="
@@ -25,6 +20,21 @@
             }}
           </span>
           <filpcountdown :deadline="edit_time"></filpcountdown>
+        </div>
+
+        <div v-if="expired || edit === true" class="column is-two-thirds">
+          <img
+            v-if="step == 0"
+            src="/storage/1_2.png"
+            width="70%"
+            alt="FaultHero: automatic reporting and notification"
+          />
+          <img
+            v-if="step == 1"
+            src="/storage/3_4.png"
+            width="70%"
+            alt="FaultHero: automatic reporting and notification"
+          />
         </div>
 
         <div class="column">
@@ -46,7 +56,7 @@
 
             <div class="field is-centered" v-if="edit === false">
               <div class="control">
-                <button id="bs" @click="edit = true" class="button is-large is-warning">Edit</button>
+                <center><button id="bs" @click="edit = true" class="button is-large is-warning">Edit</button></center>
               </div>
             </div>
           </div>
@@ -82,20 +92,20 @@
                 </span>
               </div>
             </div>
-
+         
             <div class="field">
               <div class="control">
-                <button
+                <center><button
                   id="bs"
                   @click="handle()"
                   class="button is-large is-warning"
-                >{{ step == 0 ? "Next" : "Submit" }}</button>
-                <button
+                >{{ step == 0 ? "Next" : "Submit" }}</button></center>
+                <center><button
                   id="back"
                   v-if="step == 1"
                   @click="back()"
                   class="button is-large is-dark"
-                >Back</button>
+                >Back</button></center>
               </div>
             </div>
           </div>
@@ -229,9 +239,7 @@ export default {
 #bs:hover {
   background-color: orange;
 }
-#bs {
-  margin-left: 35%;
-}
+
 .message-body {
   text-align: start;
   text-shadow: 0px 0px 0px rgba(17, 17, 17, 0.72);
@@ -247,7 +255,5 @@ export default {
   margin-left: 60%;
   margin-top: 2%;
 }
-#back {
-  margin-left: 38%;
-}
+
 </style>

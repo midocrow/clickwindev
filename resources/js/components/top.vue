@@ -40,10 +40,10 @@
 
       <div id="willbeshown" v-if="isshowen">
         <p class="panel-tabs">
-          <a class="is-active">
+          <a :class="zone == 'all' ? 'is-active' : ''">
             <span @click="change('all')" class="tag has-background-grey-lighter" :style="{ width: '55px' }">All</span>
           </a>
-          <a>
+          <a :class="zone == 'red' ? 'is-active' : ''">
             <span @click="change('red')"
               class="tag is-danger"
               :style="{
@@ -53,7 +53,7 @@
                             }"
             >Premium</span>
           </a>
-          <a>
+          <a  :class="zone == 'blue' ? 'is-active' : ''">
             <span @click="change('blue')"
               class="tag is-info"
               :style="{
@@ -63,7 +63,7 @@
                             }"
             >Bonus</span>
           </a>
-          <a>
+          <a  :class="zone == 'green' ? 'is-active' : ''">
             <span @click="change('green')"
               class="tag is-success"
               :style="{
@@ -102,7 +102,7 @@
                   />
                 </span>
               </span>
-              <span :style="{ 'margin-left': '120px' }">
+              <span v-if="zone === 'all'" :style="{ 'margin-left': '120px' }">
                 <button
                   class="button is-small is-white is-light has-tooltip-warning has-tooltip-left has-toolti-multiline"
                   data-tooltip="Passed to premium"

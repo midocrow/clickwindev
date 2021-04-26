@@ -56,7 +56,7 @@
               </div>
               <div class="control">
                 <a
-                  class="button has-background-grey-lighter is-rounded"
+                  :class="isloadingLink ? 'button has-background-grey is-rounded is-loading' : 'button has-background-grey-lighter is-rounded'"
                   href="javascript:void()"
                   @click="open()"
                 >
@@ -100,7 +100,11 @@
                     <button
                       id="bs"
                       style="font-size:18px;color:black;"
-                      class="button is-medium is-warning is-rounded"
+                      :class="
+                                            isloading
+                                                ? 'button is-medium is-warning is-rounded is-loading'
+                                                : 'button is-medium is-warning is-rounded'
+                                        "
                       type="submit"
                     >
                       <span>Submit</span>
@@ -127,7 +131,7 @@
               <div class="media-right">
                 <div class="field has-addons">
                   <div class="control">
-                    <a @click="skip()" class="button is-light is-small is-rounded">
+                    <a @click="skip()" :class="isloadingSkip ? 'button is-light is-small is-rounded is-loading' : 'button is-light is-small is-rounded'">
                       <span class="icon">
                         <i class="fas fa-forward"></i>
                       </span>
@@ -173,6 +177,8 @@ export default {
       count: 0,
       points: "203",
       isloading: false,
+      isloadingSkip: false,
+      isloadingLink: false,
       isError: false,
       ended: false,
       errors: {}
@@ -189,6 +195,10 @@ export default {
       window.open(this.fields.link);
     },
     load() {
+      this.isloadingLink = true;
+      this.fields.link = '';
+      this.fields.name = '';
+      this.fields.count = '';
       axios
         .get("/load", {
           params: {
@@ -205,6 +215,7 @@ export default {
           this.fields.name = response.data[0].name;
           this.fields.count = response.data[1] + 1;
           this.isloading = false;
+          this.isloadingLink = false;
           }else{
             this.ended = true;
             console.log(this.ended);
@@ -212,6 +223,7 @@ export default {
         })
         .catch(error => {
           this.isloading = false;
+          this.isloadingLink = false;
           this.isError = true;
           //console.log(error.response);
         });
@@ -267,14 +279,16 @@ export default {
         });
     },
     skip: function() {
-      this.isloading = true;
+      this.isloadingSkip = true;
       axios
         .post("/skiplink", this.fields)
         .then(response => {
           this.load();
+          this.isloadingSkip = false
         })
         .catch(error => {
           this.isloading = false;
+          this.isloadingSkip = false;
           this.isError = true;
 
           if (error.response.status === 422) {
