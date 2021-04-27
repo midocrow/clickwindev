@@ -25,7 +25,7 @@ class WebScraper extends Controller
         if (Auth::check()) {
             return view('home');
         }
-        return view('welcome');
+        return view('welcome2');
     }
 
     public function date()
@@ -136,6 +136,7 @@ class WebScraper extends Controller
         $link = DB::table('links')
             //->whereRaw("timediff(addtime(links.updated_at,'24:00:00'),now()) > 0")
             ->where('links.zone', $request->zone)
+            ->where('links.zone', '!=', Auth::user()->link->link)
             ->join('points', 'links.user_id', '=', 'points.user_id')
             ->join('users', 'links.user_id', '=', 'users.id')
             ->orderBy('points', 'desc')
