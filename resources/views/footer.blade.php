@@ -1,4 +1,4 @@
-<footer id="footer" class="section has-background-black">
+<footer id="footer" style="background:black;" class="section has-background-black">
     <div class="container is-small">
         <div class="columns">
             <div class="column is-narrow" style="width: 300px;text-align: left;"><img alt="FTW logo"

@@ -9,7 +9,7 @@
 
                             <center>
                                 <figure class="image is-rounded is-96x96">
-                                    <img src="/storage/CW2.png" class="is-rounded" />
+                                    <img src="/storage/logo.png" class="is-rounded" />
                                 </figure>
 
                                 <div aligned="center">

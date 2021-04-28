@@ -83,9 +83,16 @@
                                             <td>{{ $item->name }}</td>
                                             <td>{{ str_pad($item->created_at->day, 2, '0', STR_PAD_LEFT) }}-{{ str_pad($item->created_at->month, 2, '0', STR_PAD_LEFT) }}-{{ $item->created_at->year }}
                                             </td>
-                                            <td>{{ $item->null ?? '+30' }} <img
-                                                    style="width:45px;display:inline-table;margin-left:-3%;margin-right:0%;"
-                                                    src="/storage/cwin.png" /></td>
+
+                                            <td>
+                                                <span class="tag is-black is-medium" id="points-menu-item">
+                                                    {{ $item->null ?? '+30' }}
+                                                    <span class="icon is-right is-large" id="points-menu-item">
+                                                        <img style="width:22px;margin-bottom:0px;"
+                                                            src="/storage/cwin.png" />
+                                                    </span>
+                                                </span>
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>

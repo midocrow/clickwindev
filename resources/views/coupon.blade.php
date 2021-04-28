@@ -29,20 +29,31 @@
                         </div>
 
                     </div>
-                    <div class="column is-2 is-offset-4">
-                        <center>
-                            <div class="columns" style="margin-left:5%;">
-                                <div class="column">
 
-                                </div>
-                                <div class="column">
 
+                    <center>
+                        <div class="columns is-vcentered">
+                            <div class="column is-12">
+                                <div class="wrapper2">
+                                    <div class="social-links">
+                                        <a href="#"><i class="fab fa-facebook" style="color:#ffd419;font-size:50px;"
+                                                aria-hidden="true"></i></a>
+                                        <a href="#"><i class="fab fa-instagram" style="color:#ffd419;font-size:50px;"
+                                                aria-hidden="true"></i></a>
+                                        <a href="#"><i class="fab fa-twitter" style="color:#ffd419;font-size:50px;"
+                                                aria-hidden="true"></i></a>
+                                        <a href="#"><i class="fab fa-youtube" style="color:#ffd419;font-size:50px;"
+                                                aria-hidden="true"></i></a>
+                                    </div>
                                 </div>
                             </div>
-                        </center>
-
-                    </div>
+                            <div class="column">
+                            </div>
+                        </div>
+                    </center>
                 </div>
             </div>
+
         </div>
+
     @endsection

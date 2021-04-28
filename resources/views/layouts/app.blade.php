@@ -119,6 +119,12 @@
         align-items: center;
     }
 
+    .wrapper2 {
+        width: 100%;
+        height: 100%;
+        align-items: center;
+    }
+
     .social {
         display: flex;
         align-items: center;
