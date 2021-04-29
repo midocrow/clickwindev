@@ -20,6 +20,10 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <link href="https://fonts.googleapis.com/css?family=Bangers|Bitter:700|Crete+Round|Titillium+Web|Anton"
         rel="stylesheet" data-n-head="true">
+    <link
+        href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700|Open+Sans:300,300i,400,400i,700,700i|Amatic+SC:400,700"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Barlow+Semi+Condensed&display=swap" rel="stylesheet">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
@@ -235,8 +239,15 @@
         color: white;
     }
 
-    p {
-        font-family: Arial, Helvetica, sans-serif;
+    p,
+    a,
+    button,
+    label,
+    span,
+    h1,
+    h2,
+    h3 {
+        font-family: Montserrat, Mon helvetica, arial, sans-serif !important;
     }
 
 </style>
@@ -258,7 +269,7 @@
                     <navbar logged="{{ false }}"></navbar>
                 @endguest
                 @auth
-                    <navbar logged="{{ true }}" rank="{{ Auth::user()->rank }}"
+                    <navbar logged="{{ true }}" name="{{ Auth::user()->name }}" rank="{{ Auth::user()->rank }}"
                         zone="{{ App\Link::where('user_id', Auth::id())->first()->zone }}"
                         notifs="{{ Auth::user()->notifications }}" avatar="{{ Auth::user()->avatar }}">
                         {{ csrf_field() }}

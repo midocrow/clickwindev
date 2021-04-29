@@ -1,7 +1,7 @@
 <template>
   <section class>
     <div class>
-      <span class="has-text-light has-text-weight-bold is-size-1">Your link</span>
+      <span class="has-text-weight-bold is-size-1 " style="color:#ffd419">Your link</span>
       <br />
       <br />
       <br />
@@ -71,7 +71,7 @@
                 <input
                   v-model="newlink"
                   type="text"
-                  placeholder="e.g. bruce@batcave.io"
+                  placeholder="https://twitter.com/status/#######"
                   class="input is-large"
                 />
               </div>

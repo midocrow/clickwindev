@@ -1,8 +1,8 @@
 <template>
-  <nav class="navbar is-dark is-fixed-top" style="background:black;" role="navigation" aria-label="main navigation">
+  <nav class="navbar is-fixed-top" style="background:black;" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a class="navbar-item" id="logo" href="/">
-        <img id="img" src="/storage/logo.png" width="90px" />
+        <img  src="/storage/logo.png" width="90px" />
       </a>
 
       <a
@@ -219,14 +219,15 @@
           <span class="tag is-warning is-medium" id="points-menu-item">
             {{ $store.state.points }}
             <span class="icon is-right is-large" id="points-menu-item">
-              <img style="width:22px;margin-bottom:0px;" src="/storage/cwin.png" />
+              <img style="width:22px;margin-bottom:0px;border: 1px solid black; border-radius: 50%;" src="/storage/cwin.png" />
             </span>
           </span>
         </a>
 
         <div
+          @click="is_nav_active = !is_nav_active"
           v-if="logged"
-          class="navbar-item has-dropdown is-hoverable is-hidden-touch"
+          :class="is_nav_active ? 'navbar-item has-dropdown is-active is-hidden-touch' : 'navbar-item has-dropdown is-hidden-touch'"
           id="points-menu-profile"
         >
           <a class="navbar-link" id="points-menu-profile">
@@ -242,7 +243,7 @@
                                 'background-origin': 'padding-box, border-box'
                             }"
             >
-              <img :src="'/storage/' + avatar" class="is-rounded" />
+              <img :title="name" :src="'/storage/' + avatar" class="is-rounded" />
             </figure>
             <span
               class="tag is-black"
@@ -322,6 +323,7 @@ export default {
   data() {
     return {
       showNav: false,
+      is_nav_active : false,
       islogged: this.logged,
       shownavlist: false,
       shownotification: false,
@@ -375,6 +377,7 @@ export default {
   border-radius: 25px;
   padding: 2px;
 }
+
 #logo:hover {
   background-color: transparent;
 }

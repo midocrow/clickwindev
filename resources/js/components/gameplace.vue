@@ -5,7 +5,7 @@
                 <zonegold
                     zone="gold"
                     color="linear-gradient(to right, #f3a121 0%, #fee140 100%)"
-                    title="Vip Zone"
+                    title="VIP Zone"
                 />
             </div>
             <div class="column is-4 is-hidden-mobile">

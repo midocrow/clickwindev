@@ -36,14 +36,13 @@
                             <div class="column is-12">
                                 <div class="wrapper2">
                                     <div class="social-links">
-                                        <a href="#"><i class="fab fa-facebook" style="color:#ffd419;font-size:50px;"
-                                                aria-hidden="true"></i></a>
+                                        <a style="padding-right: 20px;" href="#"><i class="fab fa-facebook"
+                                                style="color:#ffd419;font-size:50px;" aria-hidden="true"></i></a>
                                         <a href="#"><i class="fab fa-instagram" style="color:#ffd419;font-size:50px;"
                                                 aria-hidden="true"></i></a>
-                                        <a href="#"><i class="fab fa-twitter" style="color:#ffd419;font-size:50px;"
-                                                aria-hidden="true"></i></a>
-                                        <a href="#"><i class="fab fa-youtube" style="color:#ffd419;font-size:50px;"
-                                                aria-hidden="true"></i></a>
+
+                                        <a style="padding-left: 20px;" href="#"><i class="fab fa-youtube"
+                                                style="color:#ffd419;font-size:50px;" aria-hidden="true"></i></a>
                                     </div>
                                 </div>
                             </div>

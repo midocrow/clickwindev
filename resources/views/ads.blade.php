@@ -3,7 +3,7 @@
 
 @section('content')
     <div class="container">
-        <h3 style="color:white" class="title is-warning">Advertising</h3>
+        <h3 style="color:#ffd419" class="title is-warning">Advertising</h3>
         <br>
 
         <div class="box has-background-dark">

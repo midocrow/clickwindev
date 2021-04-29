@@ -71,7 +71,7 @@
                                     'linear-gradient(to top, #0ba360 0%, #3cba92 100%)',
                                 width: '60px'
                             }"
-            >Basique</span>
+            >Normal</span>
           </a>
         </p>
         <!--
