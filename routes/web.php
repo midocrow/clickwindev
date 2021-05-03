@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\App;
 
 use Carbon\Carbon;
 
@@ -16,6 +17,13 @@ use Carbon\Carbon;
 | contains the "web" middleware group. Now create something great!!
 |
 */
+
+Route::get('/setlocale/{locale}', function ($locale) {
+    if (in_array($locale, ['en', 'fr'])) {
+        session(['locale' => $locale]);
+    }
+    return redirect()->back();
+});
 
 Route::get('/reset', function () {
     return view('auth.passwords.reset');

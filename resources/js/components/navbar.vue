@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar is-fixed-top" style="background:black;" role="navigation" aria-label="main navigation">
+  <nav class="navbar is-fixed-top has-background-black" style="background:black;" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a class="navbar-item" id="logo" href="/">
         <img  src="/storage/logo.png" width="90px" />
@@ -21,7 +21,7 @@
 
     <div id="navbarBasicExample" :class="showNav ? 'navbar-menu  is-active' : 'navbar-menu'">
       <div class="navbar-start">
-        <a v-if="logged" class="navbar-item" href="/home" id="item">Win Zones</a>
+        
 
         <a
           v-if="logged"
@@ -31,15 +31,19 @@
           id="item"
         >Add link</a>
         
-
+<a v-if="logged" class="navbar-item" href="/free" id="item">Refer & Win</a>
+            <a v-if="logged" class="navbar-item" href="/coupon" id="item">Coupon code</a>
+            <!--
         <div class="navbar-item has-dropdown is-hoverable">
           <a v-if="logged" class="navbar-link is-arrowless" id="item">Free Cwins</a>
+          
+           
 
           <div class="navbar-dropdown">
             <a class="navbar-item" href="/free" id="item">Refer & Win</a>
             <a class="navbar-item" href="/coupon" id="item">Coupon code</a>
           </div>
-        </div>
+        </div>-->
 
         <a class="navbar-item" href="/ads" id="item">Advertising</a>
         <a class="navbar-item" href="/contact" id="item">Contact us</a>
@@ -60,7 +64,7 @@
       </div>
 
       <div class="navbar-end">
-        <div class="navbar-item">
+        <div class="navbar-item is-hidden-touch">
           <div class="dropdown is-active is-right">
             <div class="dropdown-trigger" v-if="logged">
               <span @click="shownotification = !shownotification" class="icon is-left is-large">
@@ -216,7 +220,7 @@
         </div>
 
         <a v-if="logged" class="navbar-item is-hidden-touch" id="points-menu-item">
-          <span class="tag is-warning is-medium" id="points-menu-item">
+          <span class="tag  has-background-grey-lighter is-medium" id="points-menu-item">
             {{ $store.state.points }}
             <span class="icon is-right is-large" id="points-menu-item">
               <img style="width:22px;margin-bottom:0px;border: 1px solid black; border-radius: 50%;" src="/storage/cwin.png" />
@@ -301,10 +305,10 @@
           style="margin-right:30px;"
           class="navbar-item has-dropdown is-hoverable"
         >
-          <a class="navbar-link is-arrowless" id="item">En</a>
+          <a class="navbar-link" href="/setlocale/en" id="item">En</a>
 
           <div class="navbar-dropdown">
-            <a class="navbar-item" href="/free" id="item">Fr</a>
+            <a class="navbar-item" href="/setlocale/fr" id="item">Fr</a>
           </div>
         </div>
       </div>
@@ -385,7 +389,7 @@ export default {
   pointer-events: initial;
 }
 #points-menu-item:hover {
-  background-color: unset !important;
+  background-color: black !important;
 }
 #points-menu-item {
   pointer-events: none;
@@ -393,7 +397,9 @@ export default {
 #points-menu-profile:hover {
   background-color: black;
 }
-
+#points-menu-profile.is-active .navbar-link {
+    background-color: black;
+}
 .navbar {
   background: transparent;
 }

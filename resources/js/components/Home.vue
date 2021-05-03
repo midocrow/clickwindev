@@ -93,19 +93,25 @@
               </div>
             </div>
          
-            <div class="field">
+            <div class="field" >
               <div class="control">
                 <center><button
                   id="bs"
                   @click="handle()"
                   class="button is-large is-warning"
                 >{{ step == 0 ? "Next" : "Submit" }}</button></center>
-                <center><button
+                <center>
+                <button style="margin-top: 5px;"
                   id="back"
                   v-if="step == 1"
                   @click="back()"
-                  class="button is-large is-dark"
-                >Back</button></center>
+                  class="button is-ghost is-large is-dark"
+                >
+    <span class="icon is-small">
+      <i class="fas fa-arrow-left"></i>
+    </span>
+  </button>
+                </center>
               </div>
             </div>
           </div>

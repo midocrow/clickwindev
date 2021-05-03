@@ -6805,7 +6805,7 @@ fieldset[disabled] .select select:hover {
 }
 
 .dropdown-item {
-  color: white;
+  color: #4a4a4a;
   display: block;
   font-size: 0.875rem;
   line-height: 1.5;

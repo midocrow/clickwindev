@@ -11,14 +11,15 @@
                                 <figure class="image is-rounded is-96x96">
                                     <img src="/storage/logo.png" class="is-rounded" />
                                 </figure>
-
                                 <div aligned="center">
                                     <h1 style="font-family: calibri;letter-spacing: 8px;"
-                                        class="is-size-5 is-black is-size-4-mobile has-text-white has-font-weight-bold">YOUR
-                                        PATH TO</h1>
+                                        class="is-size-5 is-black is-size-4-mobile has-text-white has-font-weight-bold">
+                                        {{ __('YOUR PATH TO', [], Session::get('locale')) }}
+                                    </h1>
                                     <div class="aos-animate" data-aos="fade-down">
                                         <h1 style="font-family: calibri;font-size:80px;margin-top:-30px;"
-                                            class=" has-text-light has-font-weight-bold">SUCCESS</h1>
+                                            class=" has-text-light has-font-weight-bold">
+                                            {{ __('SUCCESS', [], Session::get('locale')) }}</h1>
                                     </div>
                                     <br>
                                 </div>
@@ -28,7 +29,7 @@
                                     <div class="links"> <a href="/login"
                                             style="background-image: linear-gradient(to right, #f3a121 0%, #fee140 100%);"
                                             class="button is-warning is-medium">
-                                            Join ClickWin now
+                                            {{ __('Join ClickWin now', [], Session::get('locale')) }}
                                         </a></div>
                                 </div>
                             </center>
